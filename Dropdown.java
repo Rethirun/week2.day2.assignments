@@ -3,9 +3,7 @@ package week2.day2.assignments;
 
 
 import java.util.List;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -50,12 +48,12 @@ public class Dropdown {
 		
 		Thread.sleep(2000);
 		
-		driver.findElement(By.xpath("(//div[@class='example'])[5]/select")).sendKeys(Keys.TAB);
+		WebElement selectMulti = driver.findElement(By.xpath("//option[text()='Select your programs']/.."));
+		Select select5=new Select(selectMulti);
+		select5.selectByVisibleText("Selenium");
+		select5.selectByVisibleText("Loadrunner");
+				
 		
-		
-		
-		//Select select5=new Select(findElement);
-		//select5.selectByVisibleText("Loadrunner");
 		
 	}
 
